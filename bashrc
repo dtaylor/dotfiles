@@ -11,8 +11,8 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 alias ga="git add"
 alias gc="git commit"
-
-export GIGYA_API_KEY="3_nPWutEr30jYSoWuUtim5krIfzsQycfh5tJABOEqKyDuDrtzrEjqXDs12HdyRmfmH"
+alias gla='git log --graph --oneline --decorate --all'
+alias gpom="git push origin master"
 
         RED="\[\033[0;31m\]"
      YELLOW="\[\033[0;33m\]"
@@ -36,8 +36,8 @@ LIGHT_GREEN="\[\033[1;32m\]"
 # COLOR_NONE="\e[0m"
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
-# export PS1="${LIGHT_GREEN}\u@\h ${LIGHT_BLUE}\w${YELLOW}$(__git_ps1 " (%s)")${COLOR_NONE}\$ "
-export PS1='\e[1;34m\t \e[0;32m[\u@\h] \w \e[0;33m$(__git_ps1)\e[0m $ '
+export PS1="${LIGHT_GREEN}\u@\h ${LIGHT_BLUE}\w${YELLOW}$(__git_ps1 " (%s)")${COLOR_NONE}\$ "
+#export PS1='\e[1;34m\t \e[0;32m[\u@\h] \w \e[0;33m$(__git_ps1)\e[0m $ '
 
 
 export PERL_LOCAL_LIB_ROOT="/var/home/drew/mcapp/perl5";
