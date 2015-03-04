@@ -32,6 +32,7 @@ set wildmode=list:longest
 set visualbell
 set cursorline
 set ttyfast
+set nolist
 " set statusline=%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 " set autochdir
 
@@ -47,7 +48,6 @@ nnoremap <leader>v V`]
 " nnoremap <leader>w <C-w>v<C-w>l
 " set relativenumber
 " set undofile
-" set nolist
 
 " ----- Plugin-Specific Settings --------------------------------------
 
@@ -89,9 +89,19 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with \t
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+nmap <silent> <leader>n :NERDTreeToggle<CR>
 " To have NERDTree always open on startup
 " let g:nerdtree_tabs_open_on_console_startup = 1
 
+" ----- Raimondi/delimitMate settings -----
+let delimitMate_expand_cr = 1
+augroup mydelimitMate
+  au!
+  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  au FileType tex let b:delimitMate_quotes = ""
+  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+augroup END
 
 
 map <C-h> <C-w>h
