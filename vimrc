@@ -1,4 +1,6 @@
 execute pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
@@ -32,6 +34,7 @@ set wildmode=list:longest
 set visualbell
 set cursorline
 set ttyfast
+
 set nolist
 " set statusline=%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 " set autochdir
@@ -86,22 +89,13 @@ hi clear SignColumn
 " In vim-airline, only display "hunks" if the diff is non-zero
 let g:airline#extensions#hunks#non_zero_only = 1
 
+
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with \t
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 nmap <silent> <leader>n :NERDTreeToggle<CR>
 " To have NERDTree always open on startup
 " let g:nerdtree_tabs_open_on_console_startup = 1
-
-" ----- Raimondi/delimitMate settings -----
-let delimitMate_expand_cr = 1
-augroup mydelimitMate
-  au!
-  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType tex let b:delimitMate_quotes = ""
-  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
-augroup END
 
 
 map <C-h> <C-w>h
@@ -117,11 +111,4 @@ func! DeleteTrailingWS()
     exe "normal `z"
 endfunc
 noremap <leader>w :call DeleteTrailingWS()<CR>
-
-if exists(":Tabularize")
-  nnoremap <leader>t= :Tabularize /=<CR>
-  vnoremap <leader>t= :Tabularize /=<CR>
-  nnoremap <leader>t: :Tabularize /:<CR>
-  vnoremap <leader>t: :Tabularize /:<CR>
-endif
 
