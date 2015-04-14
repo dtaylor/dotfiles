@@ -155,9 +155,4 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 #export PS1='\e[1;34m\t \e[0;32m[\u@\h] \w \e[0;33m$(__git_ps1)\e[0m $ '
 eval `dircolors ~/dotfiles/appearance/dircolors.256dark.def`
 
-
-export PERL_LOCAL_LIB_ROOT="/var/home/drew/mcapp/perl5";
-export PERL_MB_OPT="--install_base /var/home/drew/mcapp/perl5";
-export PERL_MM_OPT="INSTALL_BASE=/var/home/drew/mcapp/perl5";
-export PERL5LIB="/var/home/drew/mcapp/perl5/lib/perl5/x86_64-linux:/var/home/drew/mcapp/perl5/lib/perl5:/var/home/drew/mcapp/lib:/var/home/drew/mcapp/sites/app.startlocal.com.au/lib:/var/home/drew/mcapp/sites/api.startlocal.com.au/lib";
-export PATH="/var/home/drew/mcapp/perl5/bin:/var/home/drew/mcapp/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.3.4";
+export STARTERVIEW='~/ziprecruiter'
