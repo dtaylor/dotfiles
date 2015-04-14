@@ -139,7 +139,7 @@ set_prompts() {
     PS1+="\[$reset$white\]: "
     PS1+="\[$green\]\W" # working directory
     #PS1+="\$(prompt_git \"$white on $cyan\")" # git repository details
-    PS1+="\$(__git_ps1 \" (%s)\")"
+    #PS1+="\$(__git_ps1 \" (%s)\")"
     #PS1+="\n"
     PS1+="\[$reset$white\]\$ \[$reset\]" # $ (and reset color)
 
