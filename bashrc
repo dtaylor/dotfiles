@@ -155,4 +155,5 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 #export PS1='\e[1;34m\t \e[0;32m[\u@\h] \w \e[0;33m$(__git_ps1)\e[0m $ '
 eval `dircolors ~/dotfiles/appearance/dircolors.256dark.def`
 
-export STARTERVIEW='~/ziprecruiter'
+export STARTERVIEW='/var/starterview'
+export EDITOR=vim

@@ -18,6 +18,7 @@ set splitbelow
 set splitright
 set ignorecase
 set smartcase
+set incsearch
 set hlsearch
 set nonu
 set modelines=0
@@ -112,3 +113,6 @@ func! DeleteTrailingWS()
 endfunc
 noremap <leader>w :call DeleteTrailingWS()<CR>
 
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
