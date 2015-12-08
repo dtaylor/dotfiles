@@ -2,8 +2,8 @@ shopt -s histappend
 
 # colors for ls, etc.
 alias d="ls --color"
-alias ls="ls --color=auto"
-alias ll="ls --color -l"
+#alias ls="ls --color=auto"
+#alias ll="ls --color -l"
 
 alias gs="git status"
 alias gsc="git status --cached"
@@ -155,5 +155,8 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 #export PS1='\e[1;34m\t \e[0;32m[\u@\h] \w \e[0;33m$(__git_ps1)\e[0m $ '
 eval `dircolors ~/dotfiles/appearance/dircolors.256dark.def`
 
-export STARTERVIEW='/var/starterview'
 export EDITOR=vim
+
+export STARTERVIEW='/Users/drew/ziprecruiter'
+export LOCAL_SANDBOX_WWW_RAM=3072
+export LOCAL_SANDBOX_DB_RAM=3072
