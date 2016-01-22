@@ -116,32 +116,33 @@ set_prompts() {
     # build the prompt
 
     # logged in as root
-    if [[ "$USER" == "root" ]]; then
-        userStyle="\[$bold$red\]"
-    else
-        userStyle="\[$orange\]"
-    fi
+#    if [[ "$USER" == "root" ]]; then
+#        userStyle="\[$bold$red\]"
+#    else
+#        userStyle="\[$orange\]"
+#    fi
 
     # connected via ssh
-    if [[ "$SSH_TTY" ]]; then
-        hostStyle="\[$bold$red\]"
-    else
-        hostStyle="\[$yellow\]"
-    fi
+#    if [[ "$SSH_TTY" ]]; then
+#        hostStyle="\[$bold$red\]"
+#    else
+#        hostStyle="\[$yellow\]"
+#    fi
 
     # set the terminal title to the current working directory
     PS1="\[\033]0;\w\007\]"
 
     #PS1+="\n" # newline
-    PS1+="\[$userStyle\]\u" # username
-    PS1+="\[$reset$white\]@"
-    PS1+="\[$hostStyle\]\h" # host
-    PS1+="\[$reset$white\]: "
+#    PS1+="\[$userStyle\]\u" # username
+    PS1+="\[$orange\]\u" # username
+    PS1+="\[$white\]@"
+    PS1+="\[$orange\]\h" # host
+    PS1+="\[$white\]: "
     PS1+="\[$green\]\W" # working directory
     #PS1+="\$(prompt_git \"$white on $cyan\")" # git repository details
     #PS1+="\$(__git_ps1 \" (%s)\")"
     #PS1+="\n"
-    PS1+="\[$reset$white\]\$ \[$reset\]" # $ (and reset color)
+    PS1+="\[$white\]\$ \[$reset\]" # $ (and reset color)
 
     export PS1
 }
@@ -155,8 +156,10 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 #export PS1='\e[1;34m\t \e[0;32m[\u@\h] \w \e[0;33m$(__git_ps1)\e[0m $ '
 eval `dircolors ~/dotfiles/appearance/dircolors.256dark.def`
 
-export EDITOR=vim
 
-export STARTERVIEW='/Users/drew/ziprecruiter'
+export STARTERVIEW='/var/starterview'
 export LOCAL_SANDBOX_WWW_RAM=3072
 export LOCAL_SANDBOX_DB_RAM=3072
+export PATH=~/bin:$PATH
+export EDITOR=vim
+
