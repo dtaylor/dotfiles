@@ -1,3 +1,5 @@
+source /etc/profile.d/ziprecruiter_environment.sh
+source ~/ziprecruiter/.ziprc
 shopt -s histappend
 
 # colors for ls, etc.
@@ -5,6 +7,7 @@ alias d="ls --color"
 #alias ls="ls --color=auto"
 #alias ll="ls --color -l"
 
+alias ss="sudo salt-sync"
 alias gs="git status"
 alias gsc="git status --cached"
 alias gd="git diff"
@@ -13,6 +16,9 @@ alias ga="git add"
 alias gc="git commit"
 alias gla='git log --graph --oneline --decorate --all'
 alias gpom="git push origin master"
+#alias mr='killall -r plackup -w -q; killall -r starman -w -q; cd $STARTERVIEW; bin/zr-www-app'
+#alias mr='killall -r plackup -w -q; killall -r starman -w -q; cd $STARTERVIEW; bin/zr-www-app --port 8001'
+
 
 # borrowed from https://github.com/necolas/dotfiles/blob/master/shell/bash_prompt
 prompt_git() {
@@ -157,9 +163,18 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 eval `dircolors ~/dotfiles/appearance/dircolors.256dark.def`
 
 
-export STARTERVIEW='/var/starterview'
+export STARTERVIEW='/home/drew/ziprecruiter'
 export LOCAL_SANDBOX_WWW_RAM=3072
 export LOCAL_SANDBOX_DB_RAM=3072
 export PATH=~/bin:$PATH
 export EDITOR=vim
+export BONUSLY_TOKEN='b5d6d5cbaa2d1ceab409a76fbd1f17ee'
+export SLACK_TOKEN='xoxp-2542614889-4340163515-187895201415-d2e730853557e53de453cd7e201e9021'
+export VIP_PERL=zrperl
 
+PATH="/home/drew/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/drew/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/drew/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/drew/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/drew/perl5"; export PERL_MM_OPT;
+alias zreply='reply -I$STARTERVIEW/app/lib -MStarterView::Bootstrap -MZR::Service::DBIC'

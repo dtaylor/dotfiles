@@ -1,6 +1,6 @@
-execute pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" execute pathogen#infect()
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
@@ -58,10 +58,13 @@ nnoremap <leader>v V`]
 " ----- altercation/vim-colors-solarized settings -----
 " Toggle this to "light" for light colorscheme
 set background=dark
-
 " Uncomment the next line if your terminal is not configured for solarized
 "let g:solarized_termcolors=256
-
+let g:solarized_termcolors=16
+let g:solarized_visibility = "normal"
+let g:solarized_contrast = "normal"
+let g:solarized_termtrans = 1
+set t_Co=16
 " Set the colorscheme
 colorscheme solarized
 
@@ -83,6 +86,7 @@ let g:airline_detect_paste=1
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
 
+let g:ctrlp_max_files = 40000
 
 " ----- airblade/vim-gitgutter settings -----
 " Required after having changed the colorscheme
@@ -93,8 +97,8 @@ let g:airline#extensions#hunks#non_zero_only = 1
 
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with \t
-nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
-nmap <silent> <leader>n :NERDTreeToggle<CR>
+" nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+" nmap <silent> <leader>n :NERDTreeToggle<CR>
 " To have NERDTree always open on startup
 " let g:nerdtree_tabs_open_on_console_startup = 1
 
